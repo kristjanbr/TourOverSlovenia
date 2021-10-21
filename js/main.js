@@ -19,7 +19,7 @@ fullForm.addEventListener("submit", (e) => {
         text: 'Thanks, '+document.getElementById("fName").value+'! We will contact you within 24 hours!',
         footer: '<a href="https://www.slovenia.info/en" style="color: #575fcf;">In the meantime you can visit the official travel guide to Slovenia</a>',
     }).then((result) => {
-            document.getElementById('fullForm').submit();
+            window.location.reload(true);
     });
 });
 function about(){
