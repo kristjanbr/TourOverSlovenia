@@ -1,0 +1,310 @@
+/*---- GOOGLE FONTS IMPORT ----*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+/*---- VARIABLES ----*/
+:root{
+    --main-color: #575fcf;
+    --text-color: #525a5c;
+    --font-noraml: 1rem;
+    --font-tiny: 0.75rem;
+}
+/*---- STYLING SITE ----*/
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /*---- FIREFOX SCROLLBAR ----*/
+    scrollbar-color: var(--main-color) #e0e0e0;
+    scrollbar-width: thin;
+	margin: 0;
+    padding: 0;
+}
+/*---- CHROME SCROLLBAR ----*/
+::-webkit-scrollbar {
+    width: 10px !important;
+}
+::-webkit-scrollbar-track {
+    background:#e0e0e0 !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color) !important;
+}
+html, body{
+	width:100%;
+	height: 100%;
+}
+
+body{
+    /*---- BACKGROUND IMAGE ----*/
+    background:url("../img/bled.jpg") center center fixed cornflowerblue;
+	background-size: cover;
+    /*---- CENTER MAIN WINDOW ----*/
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+/*---- BACKGROUND GRADIENT----*/
+main{
+    z-index: -1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient( circle,rgba(66, 157, 199,0.8), rgba(89, 50, 180, 0.8));
+}
+/*---- STYLING MAIN "WINDOW" ----*/
+.window{
+    background: linear-gradient(to right top, rgba(255,255,255,0.9),rgba(255,255,255,0.6));
+    position: absolute;
+    width: 45vh;
+    min-width: 23rem;
+    border-radius: 2rem;
+    box-shadow: rgba(0,0,0,0.6) 0px 1vh 2vh;
+    margin-top: 2rem;
+}
+.title{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--main-color);
+    height: 8vh;
+    font-size: 3.6vh;
+    font-weight: 400;
+    color: white;
+    border-radius: 2rem 2rem 0 0;
+}
+.content{
+    font-size: var(--font-noraml);
+    padding: 2rem;
+}
+/*---- STYLING FORM ----*/
+.formDiv{
+    position: relative;
+    height: 3rem;
+    margin-bottom: 2rem;
+}
+.formDivSpecial{
+    position: relative;
+    height: 3rem;
+    margin-bottom: 0rem;
+}
+.formText, #start, #end, #cities{
+    padding: .7rem 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--text-color);
+    border-radius: 0.5rem;
+    outline: none;
+    background: none;
+    z-index: 2;
+    font-size: var(--font-noraml);
+}
+.formLabel{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+.formText:focus{
+    border: 1.5px solid var(--main-color);
+}
+/*---- MOVING UP LABEL ----*/
+.formText:focus + .formLabel{
+    top: -1rem;
+    left: 1rem;
+    color: var(--main-color);
+    font-size: var(--font-tiny);
+    z-index: 1;
+}
+/*---- KEEPING UP LABEL ----*/
+.formText:not(:focus).formText:not(:placeholder-shown) + .formLabel{
+    top: -1rem;
+    left: 1rem;
+    transition: 0.5s;
+    color: var(--text-color);
+    font-size: var(--font-tiny);
+    z-index: 1;
+}
+#start:focus+.formLabelDate, #end:focus+.formLabelDate, #cities:focus+.formLabelDate{
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    color: var(--main-color);
+    font-size: var(--font-tiny);
+    z-index: 1;
+}
+.formLabelDate:not(:focus){
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    color: var(--text-color);
+    font-size: var(--font-tiny);
+    z-index: 1;
+}
+#start:focus, #end:focus, #cities:focus{
+    border: 1.5px solid var(--main-color);
+}
+/*---- STYLING RADIO BUTTONS ----*/
+.formDivRadio, .formDivBox, .formDivBoxSpecial{
+    display: flex;
+    justify-content: center;
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+.mealLabel{
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 0.3rem;
+    padding: 0.5rem ;
+    margin: 0.3rem;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    padding-left: 1.6rem;
+}
+/*---- STYLING RADIO'S AND CHECKBOXES'S "CHECKBOXES" ----*/
+.container {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--font-noraml);
+    color: var(--main-color);
+    user-select: none;
+    border: 2px solid var(--main-color);
+    border-radius: 0.3rem;
+    /*width: 12rem; /*???*/
+    align-items: center;
+    padding: 0.5rem;
+    padding-left: 2.3rem;
+    margin: 0.3rem;
+    background-color: rgba(255,255,255,0.5);
+}
+.container input { /* Hide default radio/cehck button*/
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+.checkmark, .checkmarkSqr { /* Custom radio/check button */
+    display: flex;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #cfcfcf;
+    border-radius: 1rem
+}
+.checkmarkSqr{ /* Making checkbox's check (kinda) square again */
+    border-radius: 0.3rem;
+}
+.container:hover input ~ .checkmark, .container:hover input ~ .checkmarkSqr{ /* Mouse over button*/
+    background-color: #7c7e97;
+}
+.container input:checked ~ .checkmark, .container input:checked ~ .checkmarkSqr { /* Mouse clicks button*/
+    background-color: var(--main-color);
+    transition:ease-in-out 0.3s;
+}
+.checkmark:after, .checkmarkSqr:after { /* Dot/Check in the button (hidden) */
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after, .container input:checked ~ .checkmarkSqr:after { /* Dot/Check in the button (shown) */
+    display: block;
+}
+.container .checkmark:after{ /* Dot in the button (style) */
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    transition:ease-in-out 0.3s;
+}
+.container input:checked ~ .checkmarkSqr:after{/* Check in the button (style) */
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    transition:ease-in-out 0.3s;
+}
+/*----- END OF STYLING RADIO'S CHECKBOXES -----*/
+.formLabelButton{
+    margin-top: 1.4rem;
+    display: flex;
+    position: relative;
+    left: 1rem;
+    color: var(--text-color);
+    font-size: var(--font-tiny);
+}
+
+/*---- STYLING CHECKBOXES ----*/
+.addLabel{
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 0.3rem;
+    padding: 0.5rem ;
+    margin: 0.3rem;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+.formLabelButton{ /*---- Label for "Hotel meals" && "Additional Services" ----*/
+    display: flex;
+    position: relative;
+    left: 1rem;
+    color: var(--text-color);
+    font-size: var(--font-tiny);
+}
+#coverage{ /*---- Text "Coverage provided by" ----*/
+    display: flex;
+    justify-content: center;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+/*---- TEXTAREA ----*/
+textarea{
+    padding: 0.7rem 1rem;
+    width: 100%;
+    border: 1px solid var(--text-color);
+    border-radius: 0.5rem;
+    outline: none;
+    background: rgba(255,255,255,0.4);
+    font-size: var(--font-noraml);
+    resize: none;
+}
+#extras:focus + .formLabelDate{
+    color: var(--main-color);
+}
+/*---- SUBMIT BUTTON ----*/
+.formDivSubmit{
+    display: flex;   
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 7rem;
+}
+#enter{
+    display: flex;
+    color: white;
+    font-size: var(--font-noraml);
+    border: 2px solid var(--main-color);
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+#subm{ /* Text under button */
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+}

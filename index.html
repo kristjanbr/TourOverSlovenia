@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/bled-fav.png" />
+    <title>Tour over Slovenia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<main></main>
+    <div class="window">
+        <div class="title">
+            <p>TOUR OVER SLOVENIA</p>
+        </div>
+        <div class="content">
+            <form id="fullForm" method="POST">
+                <div class="formDiv">
+                    <input type="text" name="name" class="formText" placeholder=" " id="fName" pattern="^[\w\u0080-\u024F]+." required>
+                    <label for="fName" class="formLabel">Name*</label>
+                </div>
+                <div class="formDiv">
+                    <input type="text" name="surname" class="formText" placeholder=" " id="lName" pattern="^[\w\u0080-\u024F]+." required>
+                    <label for="lName" class="formLabel">Surname*</label>
+                </div>
+                <div class="formDiv">
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" class="formText" id="mName" placeholder=" " required>
+                    <label for="mName" class="formLabel">E-mail*</label>
+                </div>
+                <div class="formDiv">
+                    <input type="date" id="start" name="trip-start" value="" required>
+                    <label for="start" class="formLabelDate">Start date*</label>
+                </div>
+                <div class="formDiv">
+                    <input type="date" id="end" name="trip-end" value="" required>
+                    <label for="end" class="formLabelDate">End date*</label>
+                </div>
+                <div class="formDivSpecial">
+                    <select id="cities" name="cities" required>
+                        <option value="" selected>--SELECT--</option>
+                        <option value="ajdovščina">Ajdovščina</option>
+                        <option value="bled">Bled</option>
+                        <option value="bovec">Bovec</option>
+                        <option value="celje">Celje</option>
+                        <option value="črnomelj">Črnomelj</option>
+                        <option value="koper">Koper</option>
+                        <option value="kranj">Kranj</option>
+                        <option value="kranjskaGora">Kranjska Gora</option>
+                        <option value="ljubljana">Ljubljana</option>
+                        <option value="maribor">Maribor</option>
+                        <option value="murskaSobota">Murska Sobota</option>
+                        <option value="novaGorica">Nova Gorica</option>
+                        <option value="novoMesto">Novo Mesto</option>
+                        <option value="postojna">Postojna</option>
+                        <option value="ptuj">Ptuj</option>
+                        <option value="rogaškaSlatina">Rogaška Slatina</option>
+                    </select>
+                    <label class="formLabelDate">Your destination*</label>
+                </div>
+                <span class="formLabelButton">Hotel meals*</span>
+                <label class="container">None
+                    <input type="radio" id="mealNone" name="meal" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Half-Course
+                    <input type="radio" id="mealHalf" name="meal">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Full-Course
+                    <input type="radio" id="mealFull" name="meal">
+                    <span class="checkmark"></span>
+                </label>
+                <span class="formLabelButton">Additional services</span>
+                <label class="container">Wine
+                    <input type="checkbox" id="addWine" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <label class="container">Biking
+                    <input type="checkbox" id="addBiking" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <label class="container">Slovene Cusine
+                    <input type="checkbox" id="addFood" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <label class="container">Guided Cave trip
+                    <input type="checkbox" id="addCave" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <label class="container">Spa Resort visit
+                    <input type="checkbox" id="addSpa" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <label class="container">20GB Mobile Network Data**
+                    <input type="checkbox" id="addNetwork" name="service">
+                    <span class="checkmarkSqr"></span>
+                </label>
+                <small id="coverage">**Coverage provided by Telekom Slovenije</small>
+                <div class="formDiv">
+                    <textarea id="extras" name="extras" rows="5"
+                        placeholder="Please type if you want anything extra or would like more information, for example: &quot;What airline should I choose?&quot;"></textarea>
+                    <label for="extras" class="formLabelDate">Extra requests/notes</label>
+                </div>
+                <div class="formDivSubmit">
+                    <input type="submit" id="enter" name="btnSubmit" value="Submit">
+                </div>
+                <small id="subm">Fields marked with * are required<span onclick="about()">.</span></small>
+            </form>
+        </div>
+
+    </div>
+    <script src="js/sweetalert2.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>
