@@ -17,7 +17,7 @@ fullForm.addEventListener("submit", (e) => {
         icon: 'success',
         title: 'Form submitted!',
         text: 'Thanks, '+document.getElementById("fName").value+'! We will contact you within 24 hours!',
-        footer: '<a href="https://www.slovenia.info/en" style="color: #575fcf;">In the meantime you can visit the official travel guide to Slovenia</a>',
+        footer: '<a href="https://www.slovenia.info/en" target="_blank" style="color: #575fcf;">In the meantime you can visit the official travel guide to Slovenia</a>',
     }).then((result) => {
             window.location.reload(true);
     });

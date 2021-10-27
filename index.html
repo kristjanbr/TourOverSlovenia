@@ -18,15 +18,15 @@
         <div class="content">
             <form id="fullForm" method="POST">
                 <div class="formDiv">
-                    <input type="text" name="name" class="formText" placeholder=" " id="fName" pattern="^[\w\u0080-\u024F]+." required>
+                    <input type="text" name="name" class="formText" placeholder=" " id="fName" pattern="^[\w\u0080-\u024F]+." autocomplete="off" required>
                     <label for="fName" class="formLabel">Name*</label>
                 </div>
                 <div class="formDiv">
-                    <input type="text" name="surname" class="formText" placeholder=" " id="lName" pattern="^[\w\u0080-\u024F]+." required>
+                    <input type="text" name="surname" class="formText" placeholder=" " id="lName" pattern="^[\w\u0080-\u024F]+." autocomplete="off" required>
                     <label for="lName" class="formLabel">Surname*</label>
                 </div>
                 <div class="formDiv">
-                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" class="formText" id="mName" placeholder=" " required>
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" class="formText" id="mName" placeholder=" " autocomplete="off" required>
                     <label for="mName" class="formLabel">E-mail*</label>
                 </div>
                 <div class="formDiv">
@@ -42,20 +42,47 @@
                         <option value="" selected>--SELECT--</option>
                         <option value="ajdovščina">Ajdovščina</option>
                         <option value="bled">Bled</option>
+                        <option value="bohinjskaBitrica">Bohinjska Bistrica</option>
                         <option value="bovec">Bovec</option>
                         <option value="celje">Celje</option>
                         <option value="črnomelj">Črnomelj</option>
+                        <option value="domžale">Domžale</option>
+                        <option value="grosuplje">Grosuplje</option>
+                        <option value="ilirskaBistrica">Ilirska Bistrica</option>
+                        <option value="izola">Izola</option>
+                        <option value="kanal">Kanal</option>
+                        <option value="kobarid">Kobarid</option>
+                        <option value="kočevje">Kočevje</option>
                         <option value="koper">Koper</option>
                         <option value="kranj">Kranj</option>
                         <option value="kranjskaGora">Kranjska Gora</option>
+                        <option value="laško">Laško</option>
+                        <option value="lendava">Lendava</option>
                         <option value="ljubljana">Ljubljana</option>
+                        <option value="ljutomer">Ljutomer</option>
+                        <option value="logatec">Logatec</option>
                         <option value="maribor">Maribor</option>
                         <option value="murskaSobota">Murska Sobota</option>
                         <option value="novaGorica">Nova Gorica</option>
                         <option value="novoMesto">Novo Mesto</option>
+                        <option value="ormož">Ormož</option>
+                        <option value="pivka">Pivka</option>
+                        <option value="podčetrtek">Podčetrtek</option>
+                        <option value="portorož">Portorož</option>
                         <option value="postojna">Postojna</option>
                         <option value="ptuj">Ptuj</option>
                         <option value="rogaškaSlatina">Rogaška Slatina</option>
+                        <option value="rogla">Rogla</option>
+                        <option value="sežana">Sežana</option>
+                        <option value="slovenjGradec">Slovenj Gradec</option>
+                        <option value="slovenskaBistrica">Slovenska Bistrica</option>
+                        <option value="slovenskeKonjice">Slovenske Konjice</option>
+                        <option value="škofjaLoka">Škofja Loka</option>
+                        <option value="tolmin">Tolmin</option>
+                        <option value="trbovlje">Trbovlje</option>
+                        <option value="velenje">Velenje</option>
+                        <option value="vrhnika">Vrhnika</option>
+                        <option value="žalec">Žalec</option>
                     </select>
                     <label class="formLabelDate">Your destination*</label>
                 </div>
